@@ -4,58 +4,37 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    private bool _m_bInit = false;
-    private Vector3 _m_vAccel_L = new Vector3();		// 加速度
-    private Vector3 _m_vAccel_Start = new Vector3();	// 起動時の加速度
+    // speedを制御する
+    public float speed = 10;
 
-    //[ 初期化時 ]
-    void Awake()
-    {
-        //[ FPS設定 ]
-        Application.targetFrameRate = 60;
-    }
+    public Camera targetCamera;
 
     // Use this for initialization
     void Start()
     {
+        Input.gyro.enabled = true;//大事
+
     }
-
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        //[ 加速度を取得し感覚的な向きへ変更（取得される加速度の向きが違う） ]
-        Vector3 awv_accel = new Vector3(-Input.acceleration.y, Input.acceleration.x, -Input.acceleration.z);
-        if (awv_accel.x >= 0.5) awv_accel.x = 0.5f;
-        if (awv_accel.x <= -0.5) awv_accel.x = 0.5f;
-        //[ ローパスフィルタ（手ぶれ補正のなめらかなカーブ） ]
-        _m_vAccel_L = 0.9f * _m_vAccel_L + 0.1f * awv_accel;
+        Vector3 gravityV = Input.gyro.gravity;
+        // 外力のベクトルを計算.
+        float scale = 10.0f;
+        Vector3 forceV = new Vector3(gravityV.x, 0.0f, gravityV.y) * scale;
+        Rigidbody rigidbody = GetComponent<Rigidbody>();
+        rigidbody.AddForce(forceV);
+        //  入力をxとzに代入
+        //float x = Input.GetAxis("Horizontal");
+        //float z = Input.GetAxis("Vertical");
+        //// 同一のGameObjectが持つRigidbodyコンポーネントを取得
+        //Rigidbody rigidbody = GetComponent<Rigidbody>();
+        //// rigidbodyのx軸（横）とz軸（奥）に力を加える
+        //// xとzに10をかけて押す力をアップ
+        //rigidbody.AddForce(x * speed, 0, z * speed);
 
-        if (!_m_bInit)
-        {
-            //[ 起動時の加速度を保存しておく ]
-            _m_vAccel_Start = _m_vAccel_L;
-            _m_bInit = true;
-        }
-
-        //[ 停止したときに物理計算が解除されるので強制的にＯＮ ]
-        GetComponent<Rigidbody>().WakeUp();
-
-        //[ 加速度の差分から回転を取得 ]
-        Quaternion awq_rot = Quaternion.FromToRotation(_m_vAccel_Start, _m_vAccel_L);
-        if (awq_rot.x >= 1.0f) awq_rot.x = 1.0f;
-        if (awq_rot.x <= -1.0f) awq_rot.x = -1.0f;
-        //[ 重力を変更 ]
-        Physics.gravity = awq_rot * (-9.8f * 10 * Vector3.up);	// 1単位 = 10cmとしているので10倍
-
-       
-        Debug.Log(Physics.gravity.x);
-
-#if UNITY_ANDROID
-		//[ 戻るキーでアプリを終了させる ]
-		if( Input.GetKey(KeyCode.Escape) ){
-			Application.Quit();
-		}
-#endif
+        //カメラの方向を向くようにする。
+        //this.transform.LookAt(this.targetCamera.transform.position);  
     }
 }
 
