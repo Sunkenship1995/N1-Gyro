@@ -26,15 +26,25 @@ public class PlayerController : MonoBehaviour {
         Vector3 gravityV = Input.gyro.gravity;
         // 外力のベクトルを計算.
         float scale = 10.0f;
-        if (targetCamera.transform.localEulerAngles.y <= 110.0f) 
+        //カメラのY軸のアングルでx,yに与える力を変える
+        if (targetCamera.transform.localEulerAngles.y >= 300.0f || targetCamera.transform.localEulerAngles.y <= 50.0f)
+        {
+            forceV = new Vector3(gravityV.y, 0.0f, -gravityV.x) * -scale;
+        }
+        if (targetCamera.transform.localEulerAngles.y >= 55.0f && targetCamera.transform.localEulerAngles.y <= 123.0f)
         {
             forceV = new Vector3(gravityV.x, 0.0f, gravityV.y) * scale;
         }
-        if (targetCamera.transform.localEulerAngles.y >= 130.0f) 
+        if (targetCamera.transform.localEulerAngles.y >= 124.0f && targetCamera.transform.localEulerAngles.y <= 220.0f)
+        {
+        forceV = new Vector3(-gravityV.y, 0.0f, gravityV.x) * -scale;
+        }
+        if (targetCamera.transform.localEulerAngles.y >= 225.0f && targetCamera.transform.localEulerAngles.y <= 290.0f)
         {
             forceV = new Vector3(gravityV.x, 0.0f, gravityV.y) * -scale;
-            Debug.Log("aaa");
         }
+        
+       
         
         Rigidbody rigidbody = GetComponent<Rigidbody>();
         rigidbody.AddForce(forceV);
