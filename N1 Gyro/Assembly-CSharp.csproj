@@ -55,6 +55,7 @@
      <Compile Include="Assets\Script\PlayerController.cs" />
      <Compile Include="Assets\Script\PlayerRotate.cs" />
      <Compile Include="Assets\Script\Restart.cs" />
+     <Compile Include="Assets\Script\touchStart.cs" />
      <Compile Include="Assets\ZRNAssets\PQAssets\Scripts\Boss.cs" />
      <Compile Include="Assets\ZRNAssets\PQAssets\Scripts\ButtonSound.cs" />
      <Compile Include="Assets\ZRNAssets\PQAssets\Scripts\CameraSystem.cs" />
