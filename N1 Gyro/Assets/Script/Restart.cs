@@ -22,10 +22,7 @@ public class Restart : MonoBehaviour {
         //もしPlayerと接触したら
         if (hit.gameObject.CompareTag("Player"))
         {
-            //現在のシーンを取得
-            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-            //現在のシーンを再読み込み
-            SceneManager.LoadScene(sceneIndex);
+            SceneManager.LoadScene("title");
         }
     }
 
