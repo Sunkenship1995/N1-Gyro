@@ -22,9 +22,12 @@ public class CameraController : MonoBehaviour {
 
         //カメラの高さの差分を取得
         cameraHeight = transform.position.y - target.transform.position.y;
+
+        
     }
 
     void LateUpdate () {
+        target = GameObject.FindWithTag("Player");
         //カメラの位置を高さだけ、ターゲットに合わせて作成
         var current = new Vector3 (
             transform.position.x,
