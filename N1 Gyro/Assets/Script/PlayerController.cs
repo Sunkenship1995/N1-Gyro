@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    private xInputType sensorType = xInputType.GYROPAD;
-    public xPadID padid;
-    public OSCHostConroller controller;
-    public xMultiInputs Inputpad;
-
     // speedを制御する
     public float speed = 10;
 
@@ -16,22 +11,38 @@ public class PlayerController : MonoBehaviour {
 
     Vector3 forceV = new Vector3(0,0,0);
 
+    private Rigidbody rb;
+
+    //ジャンプスピード
+    public float jumpspeed;
+
+    private bool isJunmping = false;
+
+    private Vector3 Acceleration;
+    private Vector3 preAcceleration;
+    float DotProduct;
+    public static int ShakeCount;
+
+    int count = 0;
+
     // Use this for initialization
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         Input.gyro.enabled = true;//大事
-        targetCamera = Camera.main;
     }
     // Update is called once per frame
     void FixedUpdate()
     {
 
-        Debug.Log(targetCamera.transform.localEulerAngles.y);
+        ShakeCheck();
 
-        Inputpad = controller.xPadChannels[padid.ToString()]._input;
-        sensorType = Inputpad.sensorType;
+        //Debug.Log(targetCamera.transform.localEulerAngles.y);
 
-        Vector3 gravityV = Inputpad.gyro.rotationRateUnbiased;
+        Vector3 val = Input.acceleration;
+
+        Vector3 gravityV = Input.gyro.gravity;
+
         // 外力のベクトルを計算.
         float scale = 10.0f;
         //カメラのY軸のアングルでx,yに与える力を変える
@@ -51,15 +62,37 @@ public class PlayerController : MonoBehaviour {
         {
             forceV = new Vector3(gravityV.x, 0.0f, gravityV.y) * -scale;
         }
-             
+
+        
+
+        if (count < ShakeCount && !isJunmping)
+        {
+            rb.velocity = Vector3.up * jumpspeed;
+
+            isJunmping = true;
+            count = ShakeCount;
+        }
+        
         Rigidbody rigidbody = GetComponent<Rigidbody>();
         rigidbody.AddForce(forceV);
+
+        Debug.Log(ShakeCount);
     }
 
-    public void Init(xPadID id)
+    void ShakeCheck()
     {
-        controller = GameObject.Find("OSCHostController").GetComponent<OSCHostConroller>();
-        padid = id;
+        preAcceleration = Acceleration;
+        Acceleration = Input.acceleration;
+        DotProduct = Vector3.Dot(Acceleration, preAcceleration);
+        if (DotProduct < 0)
+        {
+            ShakeCount++;
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        isJunmping = false;
     }
 }
 
