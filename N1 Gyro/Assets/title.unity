@@ -333,6 +333,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1768070928
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4102536465602536, guid: 60eb4c0390d555a49bf827ab109db2d6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -36.29191
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102536465602536, guid: 60eb4c0390d555a49bf827ab109db2d6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -13.707897
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102536465602536, guid: 60eb4c0390d555a49bf827ab109db2d6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.1704884
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102536465602536, guid: 60eb4c0390d555a49bf827ab109db2d6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102536465602536, guid: 60eb4c0390d555a49bf827ab109db2d6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102536465602536, guid: 60eb4c0390d555a49bf827ab109db2d6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102536465602536, guid: 60eb4c0390d555a49bf827ab109db2d6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102536465602536, guid: 60eb4c0390d555a49bf827ab109db2d6, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 82072108815579184, guid: 60eb4c0390d555a49bf827ab109db2d6,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e237b3f5d889a2849b45b2189a151fd9, type: 3}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 60eb4c0390d555a49bf827ab109db2d6, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1841443888
 GameObject:
   m_ObjectHideFlags: 0

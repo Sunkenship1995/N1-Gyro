@@ -25,11 +25,15 @@ public class PlayerController : MonoBehaviour {
 
     int count = 0;
 
+    AudioClip clip;
+
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Input.gyro.enabled = true;//大事
+
+        clip = gameObject.GetComponent<AudioSource>().clip;
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -93,6 +97,7 @@ public class PlayerController : MonoBehaviour {
     void OnCollisionEnter(Collision collision)
     {
         isJunmping = false;
+        gameObject.GetComponent<AudioSource>().PlayOneShot(clip);
     }
 }
 
