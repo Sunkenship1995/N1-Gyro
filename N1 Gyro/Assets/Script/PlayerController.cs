@@ -67,20 +67,36 @@ public class PlayerController : MonoBehaviour {
             forceV = new Vector3(gravityV.x, 0.0f, gravityV.y) * -scale;
         }
 
-        
-
         if (count < ShakeCount && !isJunmping)
         {
-            rb.velocity = Vector3.up * jumpspeed;
-
+            if (forceV.z > 3.0f && forceV.x < 5.0f)
+            {
+                rb.velocity = new Vector3(0, jumpspeed, 5);
+            }
+            else if (forceV.z < -5.0f && forceV.x < 5.0f)
+            {
+                rb.velocity = new Vector3(0, jumpspeed, -3);
+            }
+            else if(forceV.z <=3.0f || forceV.z >= -5.0f)
+            {
+                rb.velocity = new Vector3(0, jumpspeed,0);
+            }
+            else if (forceV.z > 3.0f && forceV.z < 5.0f)
+            {
+                rb.velocity = new Vector3(5, jumpspeed, 0);
+            }
+            else if (forceV.x < -5.0f && forceV.z < 5.0f)
+            {
+                rb.velocity = new Vector3(-3, jumpspeed, 0);
+            }
             isJunmping = true;
             count = ShakeCount;
         }
+
+        Debug.Log(jumpspeed);
         
         Rigidbody rigidbody = GetComponent<Rigidbody>();
         rigidbody.AddForce(forceV);
-
-        Debug.Log(ShakeCount);
     }
 
     void ShakeCheck()
@@ -88,6 +104,11 @@ public class PlayerController : MonoBehaviour {
         preAcceleration = Acceleration;
         Acceleration = Input.acceleration;
         DotProduct = Vector3.Dot(Acceleration, preAcceleration);
+        if (DotProduct > 6)
+        {
+            jumpspeed = 5;
+            Debug.Log(DotProduct);
+        }
         if (DotProduct < 0)
         {
             ShakeCount++;
@@ -96,6 +117,7 @@ public class PlayerController : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
+        jumpspeed = 3;
         isJunmping = false;
         gameObject.GetComponent<AudioSource>().PlayOneShot(clip);
     }
