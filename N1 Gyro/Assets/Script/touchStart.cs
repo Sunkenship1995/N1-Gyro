@@ -16,8 +16,12 @@ public class touchStart : MonoBehaviour {
     {
         if (Input.touchCount > 0)
         {
-            Debug.Log("Touched!");
-            SceneManager.LoadScene("a");
-        } 
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+                // タッチ開始
+                SceneManager.LoadScene("a");
+            }
+        }
     }
 }

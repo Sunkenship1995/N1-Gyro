@@ -119,7 +119,10 @@ public class PlayerController : MonoBehaviour {
     {
         jumpspeed = 3;
         isJunmping = false;
-        gameObject.GetComponent<AudioSource>().PlayOneShot(clip);
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            gameObject.GetComponent<AudioSource>().PlayOneShot(clip);
+        }
     }
 }
 

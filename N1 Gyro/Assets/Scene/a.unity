@@ -231,7 +231,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 56115918}
   m_LocalRotation: {x: -0, y: 0.6825437, z: -0, w: 0.73084486}
-  m_LocalPosition: {x: -46.29, y: 1.8502351, z: -13.39}
+  m_LocalPosition: {x: -39.86, y: 1.8502351, z: -12.83}
   m_LocalScale: {x: 1.2524698, y: 0.0506, z: 2.9363472}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1032,7 +1032,6 @@ GameObject:
   - component: {fileID: 576395654}
   - component: {fileID: 576395653}
   - component: {fileID: 576395652}
-  - component: {fileID: 576395651}
   m_Layer: 0
   m_Name: Glass Road (7)
   m_TagString: Ground
@@ -1040,23 +1039,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &576395651
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 576395650}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ab2716fcdb883a74383515a11b9bdef0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &576395652
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1115,7 +1097,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 576395650}
   m_LocalRotation: {x: -0, y: 0.6825437, z: -0, w: 0.73084486}
-  m_LocalPosition: {x: -43.46, y: 1.8502351, z: -11.938}
+  m_LocalPosition: {x: -43.46, y: 1.8502351, z: -13.33}
   m_LocalScale: {x: 1.2524698, y: 0.0506, z: 2.9363472}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1497,7 +1479,7 @@ Transform:
   m_GameObject: {fileID: 754926500}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 1.102999, y: 0.49099994, z: -0.06449509}
-  m_LocalScale: {x: 3.558319, y: 0.05060003, z: 1.6437299}
+  m_LocalScale: {x: 0.5170607, y: 0.05060003, z: 1.6437299}
   m_Children: []
   m_Father: {fileID: 1815437585}
   m_RootOrder: 2
@@ -1739,7 +1721,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 853352221}
   m_LocalRotation: {x: -0, y: 0.7313176, z: -0, w: -0.6820371}
-  m_LocalPosition: {x: -41.485, y: 1.368, z: -12.478}
+  m_LocalPosition: {x: -37.22, y: 1.368, z: -12.478}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 716663430}
@@ -1984,13 +1966,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 995232686}
-  m_LocalRotation: {x: -0.11922369, y: 0.6827261, z: -0.11443819, w: 0.7117406}
+  m_LocalRotation: {x: -0.0061811926, y: 0.3949347, z: 0.0026572428, w: 0.91868454}
   m_LocalPosition: {x: -48.53, y: 3.967629, z: -8.98}
   m_LocalScale: {x: 6.494613, y: 0.050604586, z: 1.6450994}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: -0.771, y: 87.745, z: -19.009}
+  m_LocalEulerAnglesHint: {x: -0.771, y: 46.525, z: 0}
 --- !u!1 &1179966645
 GameObject:
   m_ObjectHideFlags: 0
@@ -2639,7 +2621,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1815437584}
   m_LocalRotation: {x: -0, y: 0.6825437, z: -0, w: 0.73084486}
-  m_LocalPosition: {x: -48.313, y: 1.6, z: -13.52}
+  m_LocalPosition: {x: -46.23, y: 1.6, z: -13.52}
   m_LocalScale: {x: 1.5961608, y: 1, z: 0.9205922}
   m_Children:
   - {fileID: 2080488114}
@@ -3054,7 +3036,7 @@ GameObject:
   - component: {fileID: 2090558215}
   m_Layer: 0
   m_Name: Glass Road (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3123,6 +3105,88 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 23.380001}
+--- !u!1 &2108913731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2108913735}
+  - component: {fileID: 2108913734}
+  - component: {fileID: 2108913733}
+  - component: {fileID: 2108913732}
+  m_Layer: 0
+  m_Name: Glass Road (8)
+  m_TagString: Ground
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &2108913732
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2108913731}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 1, z: 1.0000002}
+  m_Center: {x: -0.00000047683716, y: 0.0000076293945, z: 0.0000038146973}
+--- !u!23 &2108913733
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2108913731}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: f4a3f598a60ac444287fde63d569805a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &2108913734
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2108913731}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2108913735
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2108913731}
+  m_LocalRotation: {x: 0.44467825, y: -0.5551948, z: 0.49754637, w: 0.49645513}
+  m_LocalPosition: {x: -48.379, y: 4.51, z: -12.557}
+  m_LocalScale: {x: 6.494613, y: 0.050604586, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 83.718, y: -96.275, z: 0.132}
 --- !u!1 &2121352471
 GameObject:
   m_ObjectHideFlags: 0

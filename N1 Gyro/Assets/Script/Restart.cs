@@ -22,7 +22,7 @@ public class Restart : MonoBehaviour {
         //もしPlayerと接触したら
         if (hit.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("title");
+            SceneManager.LoadScene("GameOver");
         }
     }
 
